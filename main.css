@@ -1,4 +1,4 @@
-#leftcol {background-color: #0C9;
+#leftcol {background-color: #00CC99;
 	width: 30%;
 	overflow: auto;
 	margin-left: 10px;
@@ -8,6 +8,7 @@
 	float: left;
 
 }
+
 #rightcol {background-color: #30ffff;
 	width: 60%;
 	overflow: auto;
@@ -17,3 +18,4 @@
 	padding-top:5px;
 	float: right;
 }
+
