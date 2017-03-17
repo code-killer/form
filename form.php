@@ -1,10 +1,10 @@
 <?php
 $page= "form.php";
-
+session_start();
 if (isset($_GET['itemid']))
 {
 	$itemid=$_GET['itemid'];
-	//$_SESSION['t1cart_'.$itemid]=1;
+	$_SESSION['item_'.$itemid]+=1;
 	
 	//header ('location:'.$page);
 }
@@ -31,7 +31,7 @@ else "no item id";
 <?php
 // call the fielitem list funtion here
 $dyn_table = '<tr><td>' . '<a style="text-decoration:none; height:30px; width:100px; display:block; text-align:center;
-                              background-color:#2E59A4; color:#FFFFFF;  padding-top: 10px;"  href="form.php?itemid=1">Text Field</a>'
+                              background-color:#2E59A4; color:#FFFFFF;  padding-top: 10px;"  href="form.php?itemid=text">Text Field</a>'
 			      . '</td>
 				  </tr></br>' . 
 			'<tr><td>' . '<a style="text-decoration:none; height:30px; width:100px; display:block; text-align:center;
@@ -60,8 +60,17 @@ echo $dyn_table;
 <div id="rightcol">
 
 <?php
+$_SESSION['item_'.$itemid]+=1;
+$_SESSION['item_2']=1;
+$_SESSION['item_1']=1;
+
+foreach ($_SESSION as $name => $quantaty) {
+$id = substr ($name,5, (strlen($name) -5));
+//echo $id;
+}
+
 if(isset($itemid)) {
-	if($itemid==1) {
+	if($itemid=='text') {
 $dyn_table = '<tr>
                 <td>' . '<input type="text" value="Text goes here" style="text-decoration:none; height:30px; width:200px; display:block;
                                 text-align:center; background-color:#2E59A4; color:#FFFFFF; padding-top: 10px;" />' . '</td>
